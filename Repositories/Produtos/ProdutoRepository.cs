@@ -5,7 +5,6 @@ using Teste_MVC.Dto.Produtos;
 using Teste_MVC.Models.Clientes;
 using Teste_MVC.Models.Produtos;
 using Teste_MVC.Data;
-using Teste_MVC.Validation;
 using FluentValidation;
 
 namespace Teste_MVC.Repositories.Produtos

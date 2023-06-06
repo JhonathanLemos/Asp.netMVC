@@ -1,6 +1,6 @@
 ﻿namespace Teste_MVC
 {
-    public class IEntity
+    public class Entity
     {
         public long Id { get; set; }
     }

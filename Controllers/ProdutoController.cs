@@ -104,7 +104,7 @@ namespace Teste_MVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(IEntity entity)
+        public IActionResult Delete(Entity entity)
         {
             if (entity.Id == null)
             {
