@@ -1,0 +1,44 @@
+﻿@model Teste_MVC.Models.Clientes.Cliente
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="d-flex justify-content-center" style="width:100%">
+    <div class="row" style="width:40%">
+        <h3>Detalhes do cliente</h3>
+        <hr />
+
+        <dt class="col-sm-8">
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt class="col-sm-8">
+            @Html.DisplayNameFor(model => model.Idade)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Idade)
+        </dd>
+        <dt class="col-sm-8">
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+        <dt class="col-sm-8">
+            @Html.DisplayNameFor(model => model.Cnpj)
+        </dt>
+        <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.Cnpj)
+        </dd>
+        </dl>
+        <div class="d-flex justify-content-end">
+            <input type="button" value="Voltar" onclick="window.location.href = '@Url.Action("Index", "Cliente")';" class="btn btn-primary" />
+            <a class="buttonApplication" asp-action="Edit" asp-route-id="@Model?.Id" asp-controller="Cliente">Editar Cliente</a>
+        </div>
+    </div>
+</div>
+

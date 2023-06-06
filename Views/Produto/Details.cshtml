@@ -1,0 +1,43 @@
+﻿@model Teste_MVC.Models.Produtos.Produto
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="d-flex justify-content-center" style="width:100%">
+    <div class="row" style="width:40%">
+        <h1>Detalhes do produto</h1>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-8">
+                @Html.DisplayNameFor(model => model.NomeProduto)
+            </dt>
+            <dd class="col-sm-4">
+                @Html.DisplayFor(model => model.NomeProduto)
+            </dd>
+            <dt class="col-sm-8">
+                @Html.DisplayNameFor(model => model.CodigoProduto)
+            </dt>
+            <dd class="col-sm-4">
+                @Html.DisplayFor(model => model.CodigoProduto)
+            </dd>
+            <dt class="col-sm-8">
+                @Html.DisplayNameFor(model => model.Quantidade)
+            </dt>
+            <dd class="col-sm-4">
+                @Html.DisplayFor(model => model.Quantidade)
+            </dd>
+            <dt class="col-sm-8">
+                @Html.DisplayNameFor(model => model.Cliente)
+            </dt>
+            <dd class="col-sm-4">
+                @Html.DisplayFor(model => model.Cliente.Nome)
+            </dd>
+            <div class="d-flex justify-content-end">
+                <input type="button" value="Voltar" onclick="window.location.href = '@Url.Action("Index", "Produto")';" class="btn btn-primary" />
+                <a class="buttonApplication" asp-action="Edit" asp-route-id="@Model?.Id" asp-controller="Produto">Editar Produto</a>
+            </div>
+        </dl>
+    </div>
+

@@ -1,0 +1,32 @@
+﻿@model Login
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container" style="width:40%">
+
+    <div class="d-block justify-content-center">
+        <h1 class="p-2">Cadastre-se</h1>
+
+        <form asp-controller="Login" asp-action="Register" method="post" class="p-2" role="form">
+            @if (ViewBag.ErroMessage != null)
+            {
+                <span class="text-danger">
+                    @ViewBag.ErroMessage
+                </span>
+            }
+
+
+            <input type="text" placeholder="Usuário" asp-for="UserName" class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+            <input type="password" placeholder="Senha" asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+
+            <div class="d-flex justify-content-end">
+
+                <input type="submit" class="btn btn-primary " value="Login" />
+            </div>
+
+        </form>
+    </div>
+</div>

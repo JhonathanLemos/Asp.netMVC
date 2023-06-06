@@ -1,0 +1,49 @@
+﻿@model Teste_MVC.Models.Produtos.Produto
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="d-flex justify-content-center">
+    <div class="row">
+        <div class="col-md-12">
+
+            <div>
+                <h3>Você tem certeza que deseja remover esse produto?</h3>
+                <h4>Produto</h4>
+                <hr />
+                <dl class="row">
+                    <dt class="col-sm-8">
+                        @Html.DisplayNameFor(model => model.NomeProduto)
+                    </dt>
+                    <dd class="col-sm-4">
+                        @Html.DisplayFor(model => model.NomeProduto)
+                    </dd>
+                    <dt class="col-sm-8">
+                        @Html.DisplayNameFor(model => model.CodigoProduto)
+                    </dt>
+                    <dd class="col-sm-4">
+                        @Html.DisplayFor(model => model.CodigoProduto)
+                    </dd>
+                    <dt class="col-sm-8">
+                        @Html.DisplayNameFor(model => model.Quantidade)
+                    </dt>
+                    <dd class="col-sm-4">
+                        @Html.DisplayFor(model => model.Quantidade)
+                    </dd>
+                    <dt class="col-sm-8">
+                        @Html.DisplayNameFor(model => model.Cliente)
+                    </dt>
+                    <dd class="col-sm-4">
+                        @Html.DisplayFor(model => model.Cliente.Id)
+                    </dd>
+                </dl>
+                <div class="d-flex justify-content-end">
+                    <form asp-action="Delete">
+                        <input type="button" value="Voltar" onclick="window.location.href = '@Url.Action("Index", "Produto")';" class="btn btn-primary" />
+                        <input type="submit" asp-route-id="@Model.Id" value="Deletar" class="btn btn-danger" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
