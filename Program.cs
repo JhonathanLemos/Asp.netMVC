@@ -10,8 +10,8 @@ using Teste_MVC.Models.Produtos;
 using FluentValidation.AspNetCore;
 using Teste_MVC.Validation.Clientes;
 using FluentValidation;
-using Teste_MVC.Validation;
 using Teste_MVC.Validation.Produtos;
+using Teste_MVC.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

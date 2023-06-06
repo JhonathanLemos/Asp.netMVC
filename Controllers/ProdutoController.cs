@@ -30,17 +30,11 @@ namespace Teste_MVC.Controllers
 
         public IActionResult Details(long? id)
         {
-            if (id == null || _produtoRepository.GetAll() == null)
-            {
-                return NotFound();
-            }
-
             var produto = _produtoRepository.GetAll().Include(x => x.Cliente).Where(x => x.Id == id).FirstOrDefault();
             if (produto == null)
             {
                 return NotFound();
             }
-
             return View(produto);
         }
 
@@ -69,7 +63,6 @@ namespace Teste_MVC.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            //ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id", produto.ClienteId);
             return View(produtoDto);
         }
 
@@ -93,16 +86,10 @@ namespace Teste_MVC.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(long id, [Bind("Id,NomeProduto,CodigoProduto,Quantidade,ClienteId")] ProdutoDto produtoDto)
         {
+            var produto = _mapper.Map<Produto>(produtoDto);
+            var result = _produtoRepository.Update(produto);
 
-
-            if (ModelState.IsValid)
-            {
-                var produto = _mapper.Map<Produto>(produtoDto);
-                var result = _produtoRepository.Update(produto);
-
-                return RedirectToAction(nameof(Index));
-            }
-            return View();
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Delete(long? id)

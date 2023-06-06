@@ -2,7 +2,7 @@
 
 namespace Teste_MVC.Dto.Clientes
 {
-    public class CreateClienteDto : IEntity
+    public class CreateClienteDto : Entity
     {
         public string Nome { get; set; }
         public int Idade { get; set; }

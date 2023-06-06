@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Teste_MVC.Validation
+namespace Teste_MVC.Repositories
 {
     public interface IRepository<T>
     {

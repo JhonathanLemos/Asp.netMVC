@@ -3,7 +3,7 @@ using Teste_MVC.Models.Produtos;
 
 namespace Teste_MVC.Models.Clientes
 {
-    public class Cliente : IEntity
+    public class Cliente : Entity
     {
 
         [Required(ErrorMessage = "Informe o nome")]

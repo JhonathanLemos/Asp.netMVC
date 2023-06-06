@@ -2,8 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Teste_MVC.Dto.Clientes;
-using Teste_MVC.Validation;
 using Teste_MVC.Models.Clientes;
+using Teste_MVC.Repositories;
 
 namespace Teste_MVC.Controllers
 {

@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Teste_MVC.Data;
 
-namespace Teste_MVC.Validation
+namespace Teste_MVC.Repositories
 {
-    public class Repository<T> : Controller, IRepository<T> where T : IEntity
+    public class Repository<T> : Controller, IRepository<T> where T : Entity
     {
         private readonly ApplicationDbContext _context;
         private readonly IValidator<T> _validator;

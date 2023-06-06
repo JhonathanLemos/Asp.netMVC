@@ -4,7 +4,7 @@ using Teste_MVC.Models.Clientes;
 
 namespace Teste_MVC.Models.Produtos;
 
-public class Produto : IEntity
+public class Produto : Entity
 {
     [Required(ErrorMessage = "Informe o nome do produto")]
     [DataType(DataType.Text)]
